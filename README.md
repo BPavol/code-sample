@@ -64,7 +64,7 @@ Password: 123456
 Main index.php is in www directory but .htaccess should take care of redirection if modrewrite is installed.
 
 ## Used technologies, libraries and software
-Apache, PHP, MySQL, JavaScript, jQuery, Bootstrap, Font Awesome, [Select2](https://select2.github.io/), HTML, CSS, LESS, Nette, Composer, NPM, GitHub, [janmarek/webloader](https://github.com/janmarek/WebLoader)
+Apache, PHP, MySQL, JavaScript, jQuery, Bootstrap, Font Awesome, [Select2](https://select2.github.io/), HTML, CSS, LESS, Nette, Composer, NPM, GitHub, [mPDF](https://mpdf.github.io/), [janmarek/webloader](https://github.com/janmarek/WebLoader)
 
 ## Conventions
 PSR-2: Coding Style Guide, PSR-4: Autoloader
