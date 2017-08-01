@@ -1,0 +1,48 @@
+Results: {$rowsCount}
+
+{control paginator}
+{form massSelectionForm}
+	<div class="table-responsive">
+		<table class="table table-hover table-middle">		
+			<thead> 
+				<tr> 
+					<th>
+						<span data-toggle="tooltip" title="Mass deletion. For selection iversion click here.">
+							<a href="#" data-check-all=".massSelectionSelectbox">X</a>
+						</span>
+					</th>
+					<th class="text-center"><a href="{link order id}">#</a></th>		
+					<th><a href="{link order email}">Email</a></th>
+					<th><a href="{link order name}">Name</a></th>
+					<th><a href="{link order surname}">Surname</a></th>
+					<th><a href="{link order city}">City</a></th>
+					<th><a href="{link order street}">Street</a></th>
+					<th></th>			
+				</tr> 
+			</thead> 
+			<tbody> 			 
+				{foreach $rowsQuery as $row}
+					<tr>
+						<td><input n:name="id" value="{$row->id}" /></td> 
+						<th scope="row" class="text-center">{$row->id}</th> 
+						<td>{$row->email}</td> 
+						<td>{$row->name}</td> 
+						<td>{$row->surname}</td> 
+						<td>{$row->city}</td> 
+						<td>{$row->street}</td>
+						<td>
+							<div class="btn-group-vertical" role="group" aria-label="Action">
+								<a href="{plink Customers:edit $row->id}" class="btn btn-success">
+									<i class="fa fa-pencil" aria-hidden="true"></i>  Edit
+								</a>
+							</div>
+						</td> 
+					</tr> 	
+				{/foreach}		
+			</tbody>
+		</table>
+	</div>		
+				
+	{input delete, data-toggle => "tooltip", title => "Remove items permanently!"}
+{/form}
+{control paginator}

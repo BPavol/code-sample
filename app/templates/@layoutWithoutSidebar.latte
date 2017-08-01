@@ -1,0 +1,47 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Invoice system</title>
+		
+	<link href="{$basePath}/favicon.png" rel="icon" type="image/png" /> 	
+	{control css}
+	{block head}{/block}
+</head>
+
+<body>
+	<header id="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">Invoice system</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				
+			</div>
+		  </div>
+		</nav>
+	</header>
+	
+	<div id="content-main">			
+		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>		
+		{include content}
+	</div>
+	
+	<footer id="footer">
+		<div id="footer-content">
+			<div class="container">
+				&copy; <a href="http://bpavol.eu" target="_blank">BPavol</a>
+			</div>
+		</div>
+	</footer>
+	{control js}
+</body>
+</html>

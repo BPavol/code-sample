@@ -1,0 +1,10 @@
+log/*
+temp/*
+vendor/*
+!.gitignore
+!.htaccess
+app/config/config.local.neon
+www/webtemp/*
+!www/webtemp/.gitkeep
+www/node_modules/*
+!www/node_modules/.gitkeep

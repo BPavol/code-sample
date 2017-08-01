@@ -1,0 +1,81 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+session:
+	expiration: 14 days
+	
+database:
+	dsn: 'mysql:host=127.0.0.1;port=3306;dbname=code-sample'
+	user: 'my-username'
+	password: 'my-password'
+	conventions: discovered
+	options:
+		charset: utf8mb4
+		lazy: true	
+	
+extensions:
+	webloader: WebLoader\Nette\Extension
+	
+webloader:
+	css:
+		admin:
+			files:
+				- %wwwDir%/node_modules/font-awesome/css/font-awesome.min.css
+				- %wwwDir%/node_modules/bootstrap/dist/css/bootstrap.min.css
+				- %wwwDir%/node_modules/bootstrap/dist/css/bootstrap-theme.min.css
+				- %wwwDir%/node_modules/select2/dist/css/select2.min.css
+				- %wwwDir%/node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css
+				- {files: ["*.css", "*.less"], from: %wwwDir%/css} # Nette\Utils\Finder support
+			filters:
+				- @jwlCssMinFilter
+			fileFilters:
+				- @lessFilter
+				- @wlCssFilter
+				
+	js:
+		admin:
+			files:
+				- %wwwDir%/node_modules/jquery/dist/jquery.min.js				
+				- %wwwDir%/node_modules/bootstrap/dist/js/bootstrap.min.js
+				- %wwwDir%/node_modules/select2/dist/js/select2.min.js
+				- {files: ["*.js"], from: %wwwDir%/js}
+			filters:
+				- @jsMin
+				
+services:
+	- \App\Model\UserManager
+	router: App\RouterFactory::createRouter
+	
+	# Webloader
+	wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%, null, @http.request)
+	lessFilter: WebLoader\Filter\LessFilter
+	jwlCssMinFilter: Joseki\Webloader\CssMinFilter
+	jsMin: Joseki\Webloader\JsMinFilter
+
+	# Tables
+	userTable: \App\Model\Tables\UserTable
+	countryTable: \App\Model\Tables\CountryTable
+	customerTable: \App\Model\Tables\CustomerTable
+	invoiceTable: \App\Model\Tables\InvoiceTable
+
+	# Factories
+	- App\Components\Factories\IPaginatorFactory
+	- \App\Forms\IFormFactory
+	- \App\Forms\FulltextFilterFormFactory
+	- \App\Components\Factories\ISignInFormFactory
+	- \App\Components\Factories\ICustomerFormFactory
+	- \App\Model\Entities\ICustomerFactory
+	- \App\Components\Factories\Tables\ICustomerTableFactory
+	- \App\Components\Factories\IInvoiceFormFactory
+	- \App\Model\Entities\IInvoiceFactory
+	- \App\Components\Factories\Tables\IInvoiceTableFactory
+	- \App\Model\InvoiceGeneratorFactory

@@ -1,0 +1,21 @@
+{if $paginator->pageCount > 1}
+	<nav aria-label="List navigation">
+		<ul class="pagination pagination-sm">
+			{if !$paginator->isFirst()}
+				<li><a href="{link this, 'page' => $paginator->page - 1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+			{/if}
+			
+			{foreach $steps as $step}
+				<li {if $step == $paginator->page}class="active"{/if}>
+					<a href="{link this, 'page' => $step}">
+						{$step} {if $step == $paginator->page}<span class="sr-only">(current)</span>{/if}
+					</a>
+				{if $iterator->nextValue > $step + 1}<span>…</span>{/if}
+			{/foreach}
+			
+			{if !$paginator->isLast()}
+				<li><a href="{link this, 'page' => $paginator->page + 1}" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+			{/if}
+		</ul>
+	</nav>
+{/if}

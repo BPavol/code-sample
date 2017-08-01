@@ -1,0 +1,17 @@
+{form signInForm, class => 'form-signin'}
+	<div class="errors" n:if="$form->hasErrors()">
+		<div n:foreach="$form->errors as $error" class="alert alert-danger">{$error}</div>
+	</div>
+		
+	{label email class => 'sr-only'}
+	{input email}
+	
+	{label password class => 'sr-only'}
+	{input password}
+	
+	<div class="checkbox">
+		{input remember}
+	</div>
+		
+	{input submit}
+{/form}

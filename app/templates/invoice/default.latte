@@ -1,0 +1,325 @@
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		
+		border: 1px solid #000;
+	}
+	
+	table td,
+	table th{
+		border: 1px solid #000;
+		
+		padding: 2px 5px;
+	}
+	
+	table.no-border{
+		border: 0;
+	}	
+	
+	table.no-border td,
+	table.no-border th{
+		border: 0;
+	}
+	
+	table.half td{
+		width: 50%;
+	}
+	
+	/* Table style 1 DEFAULT */
+	table.table-style-1 td,
+	table.table-style-2 td{
+		width: 20%;
+		border-right: 0;
+	}
+	
+	table.table-style-1 td.second,
+	table.table-style-2 td.second{
+		width: 30%;
+		border-left: 0;
+	}
+	
+	table.table-style-1 td.third,
+	table.table-style-2 td.third{
+		width: 15%;
+		border-right: 0;
+	}
+	
+	table.table-style-1 td.fourth,
+	table.table-style-2 td.fourth{
+		width: 35%;
+		border-left: 0;
+	}
+	
+	/* Table style 2 */
+	table.table-style-2 td{
+		width: 20%;
+	}
+	
+	table.table-style-2 td.second{
+		width: 30%;
+	}
+		
+	table.table-style-2 td.third{
+		width: 20%;
+		border-right: 0;
+	}
+	
+	table.table-style-2 td.fourth{
+		width: 30%;
+		border-left: 0;
+	}
+	
+	/* Global classes */
+	.text-center{
+		text-align: center;
+	}
+	
+	h2{
+		font-size: 18px;
+	}
+	
+	.img-25{
+		width: 25%;
+	}
+</style>
+
+<table class="no-border half text-center">
+	<tbody>
+		<tr>
+			<td>
+				<img src="{$basePath}/images/invoices/logo.png" alt="BPavol" class="img-25" />
+			</td>
+			<td>
+				<h1>Fiction s.r.o.</h1>
+				Random road 123,<br />                                                                                             
+				111 22 Hidden city
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+<table class="table-style-1">
+	<tbody>
+		<tr>
+			<td>
+				<h2>Invoice number:</h2>
+			</td>
+			<td class="second">
+				<h2>{$invoice->id}</h2>
+			</td>
+			<td class="third">
+				<h2>Importer:</h2>
+			</td>
+			<td class="fourth">
+				<h2>Fiction s.r.o.</h2>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Invoice creation date:
+			</td>
+			<td class="second">
+				{$invoice->create_date|date:'j.n.Y'}
+			</td>
+			<td class="third">
+				Recsidence:
+			</td>
+			<td class="fourth">
+				Random road 123, 111 22 Hidden city
+			</td>
+		</tr>
+		
+		<tr>			
+			<td colspan="2">		
+				Company registration number:	
+			</td>			
+			<td colspan="2">
+				12312377
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Maturity date:	
+			</td>
+			<td class="second">
+				{$invoice->create_date|date:'j. n. Y'}
+			</td>
+			<td class="third">
+				Tax ID:	
+			</td>
+			<td class="fourth">
+				2022 146 852
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Variable symbol:	
+			</td>
+			<td class="second">
+				{$invoice->id}
+			</td>
+			<td class="third">
+				VAT number:
+			</td>
+			<td class="fourth">
+				------------------
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Speific symbol:	
+			</td>
+			<td class="second">
+				------------------
+			</td>
+			<td class="third">
+				Account number:	
+			</td>
+			<td class="fourth">
+				1231231231/0123
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Payment type:	
+			</td>
+			<td class="second">
+				Bank transfer
+			</td>
+			<td class="third">
+					
+			</td>
+			<td class="fourth">
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Date of tax liability:	
+			</td>
+			<td class="second">
+				------------------
+			</td>
+			<td class="third">
+				IBAN:	
+			</td>
+			<td class="fourth">
+				SK0123000000001231231231
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Order no.:	
+			</td>
+			<td class="second">
+				{rand()}
+			</td>
+			<td class="third">
+				Signed in:	
+			</td>
+			<td class="fourth">
+				Okresný súd Bratislava, Oddiel Sro, Vložka č. 36255/B
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+<table class="text-center">
+	<tbody>
+		<tr>
+			<th>
+				No.
+			</th>
+			<th>
+				Name of product/service
+			</th>
+			<th>
+				Unit
+			</th>
+			<th>
+				Unit number
+			</th>
+			<th>
+				Price for unit with TAX
+			</th>
+			<th>
+				Total with TAX
+			</th>
+		</tr>
+		<tr>
+			<td>
+				1.
+			</td>
+			<td>
+				Some strange random product
+			</td>
+			<td>
+				kg
+			</td>
+			<td>
+				5
+			</td>
+			<td>
+				{$invoice->price} €
+			</td>
+			<td>
+				{$invoice->price} €
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+<table class="table-style-2">
+	<tbody>
+		<tr>
+			<td colspan="2">
+				The invoice was issued for:
+			</td>
+			<td colspan="2">
+				<strong>{$invoice->getCustomer()->name} {$invoice->getCustomer()->surname}</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				The invoice was issued by:
+			</td>
+			<td class="second">
+				Ing. BPavol
+			</td>
+			<td class="third">
+				Preliminary checks were carried out by:
+			</td>
+			<td class="fourth">
+				Ing. BPavol
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-center">
+				Sign and stamp:
+			</td>
+			<td colspan="2" class="text-center">
+				Total invoice prices:
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="text-center">
+				<img src="{$basePath}/images/invoices/logo.png" alt="Stamp and sign" class="img-25" />
+			</td>
+			<td colspan="2" class="text-center">
+				<h2>
+					{$invoice->price} €
+				</h2>
+			</td>
+		</tr>
+	</tbody>
+</table>

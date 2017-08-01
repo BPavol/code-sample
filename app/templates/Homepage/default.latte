@@ -1,0 +1,32 @@
+{block content}
+<h1 n:block=title><i class="fa fa-line-chart" aria-hidden="true"></i> Overview</h1>
+
+<div class="content">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="alert alert-success text-center">
+				<strong>The number of customers in the directory</strong><br />
+				{$customersCount}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="alert alert-info text-center">
+				<strong>The number of listed invoices</strong><br />
+				{$invoicesCount}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="alert alert-warning text-center">
+				<strong>Last customer created</strong><br />
+				{$lastCustomer->name} {$lastCustomer->surname}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="alert alert-danger text-center">
+				<strong>Last invoice created</strong><br />
+				{$lastInvoice->id}
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
