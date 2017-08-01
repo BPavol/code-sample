@@ -14,19 +14,23 @@
 				<strong>The number of listed invoices</strong><br />
 				{$invoicesCount}
 			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="alert alert-warning text-center">
-				<strong>Last customer created</strong><br />
-				{$lastCustomer->name} {$lastCustomer->surname}
+		</div>		
+		{if $lastCustomer}
+			<div class="col-md-3">
+				<div class="alert alert-warning text-center">
+					<strong>Last customer created</strong><br />
+					{$lastCustomer->name} {$lastCustomer->surname}
+				</div>
 			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="alert alert-danger text-center">
-				<strong>Last invoice created</strong><br />
-				{$lastInvoice->id}
+		{/if}
+		{if $lastInvoice}
+			<div class="col-md-3">
+				<div class="alert alert-danger text-center">
+					<strong>Last invoice created</strong><br />
+					{$lastInvoice->id}
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </div>
 {/block}
