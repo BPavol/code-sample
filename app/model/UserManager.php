@@ -46,6 +46,6 @@ class UserManager implements \Nette\Security\IAuthenticator
 	
 	public static function hashPassword($password)
 	{
-		return \Nette\Security\Passwords::hash($password, ['cost' => 15]);
+		return \Nette\Security\Passwords::hash($password, ['cost' => 10]);
 	}
 }

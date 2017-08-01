@@ -11,10 +11,10 @@ Results: {$rowsCount}
 							<a href="#" data-check-all=".massSelectionSelectbox">X</a>
 						</span>
 					</th>
-					<th class="text-center"><a href="{link order id}">#</a></th>		
-					<th><a href="{link order email}">Email</a></th>
+					<th class="text-center"><a href="{link order id}">#</a></th>	
 					<th><a href="{link order name}">Name</a></th>
-					<th><a href="{link order surname}">Surname</a></th>
+					<th><a href="{link order surname}">Surname</a></th>	
+					<th><a href="{link order email}">Email</a></th>
 					<th><a href="{link order city}">City</a></th>
 					<th><a href="{link order street}">Street</a></th>
 					<th></th>			
@@ -25,9 +25,9 @@ Results: {$rowsCount}
 					<tr>
 						<td><input n:name="id" value="{$row->id}" /></td> 
 						<th scope="row" class="text-center">{$row->id}</th> 
-						<td>{$row->email}</td> 
 						<td>{$row->name}</td> 
 						<td>{$row->surname}</td> 
+						<td>{$row->email}</td> 
 						<td>{$row->city}</td> 
 						<td>{$row->street}</td>
 						<td>

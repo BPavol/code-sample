@@ -31,7 +31,7 @@ Results: {$rowsCount}
 						</td> 
 						<td>{$row->name}</td> 
 						<td>{$row->description}</td> 
-						<td>{$row->price} &euro;</td> 
+						<td>{$row->price|number:2:'.':' '} &euro;</td> 
 						<td>
 							<div class="btn-group-vertical" role="group" aria-label="Action">
 								<a href="{plink Invoices:edit $row->id}" class="btn btn-success">

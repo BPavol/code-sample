@@ -14,7 +14,7 @@ DEFAULT CHARACTER SET utf8
 DEFAULT COLLATE utf8_general_ci
 AUTO_INCREMENT 1;
 
-INSERT INTO user (email, password, active, create_date, creator_id) VALUES('test@test.com', '$2y$15$Gy5cDcDx4H3/d3oAuovJseDFeQBD/XQJwUu8miqDLKMf79FmZddOS', true, NOW(), 0);
+INSERT INTO user (email, password, active, create_date, creator_id) VALUES('test@test.com', '$2y$10$GVh1IuwdQQvkBD1Q4XVf3eP.A0TcPYkGFOBwoJllfs0Z5nHHjlFoS', true, NOW(), 0);
 
 CREATE TABLE IF NOT EXISTS customer(
 	id INT(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,

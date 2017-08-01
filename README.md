@@ -95,4 +95,9 @@ In square brackets how much time I was spent on creation of specific modules of 
 * Fulltext searchbox for both, customers and invoices
 * Displaying invoices in customer editation form, that belongs to him
 
-Total: **13 hours**
+### Day 4\[2h 30m\]
+* Embeding on production server
+* Fixing minor bugs
+* Last tests
+
+Total: **15 hours and 30 minutes**

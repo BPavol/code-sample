@@ -60,7 +60,7 @@ class InvoicesPresenter extends BaseProtectedPresenter
 	{
 		$selection = $this->invoiceTable->getTable();
 		if ($this->fulltext) {
-			$selection->where('name LIKE ? OR description LIKE ?', '%'.$this->fulltext.'%', '%'.$this->fulltext.'%');
+			$selection->where('id LIKE ? OR name LIKE ? OR description LIKE ?', '%'.$this->fulltext.'%', '%'.$this->fulltext.'%', '%'.$this->fulltext.'%');
 		}
 		
 		return $this->invoiceTableFactory->create($selection);

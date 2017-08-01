@@ -269,10 +269,10 @@
 				5
 			</td>
 			<td>
-				{$invoice->price} €
+				{$invoice->price|number:2:'.':' '} €
 			</td>
 			<td>
-				{$invoice->price} €
+				{$invoice->price|number:2:'.':' '} €
 			</td>
 		</tr>
 	</tbody>
@@ -317,7 +317,7 @@
 			</td>
 			<td colspan="2" class="text-center">
 				<h2>
-					{$invoice->price} €
+					{$invoice->price|number:2:'.':' '} €
 				</h2>
 			</td>
 		</tr>

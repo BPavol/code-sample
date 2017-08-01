@@ -11,7 +11,7 @@ abstract class BaseTable extends \App\Components\BaseControl
 	public $order = null;
 	
 	/** @persistent */
-	public $desc = false;
+	public $desc = true;
 	
 	/** @var array Must be filled in child class with collumns available for order */
 	protected $allowed_orders = [];
@@ -73,6 +73,10 @@ abstract class BaseTable extends \App\Components\BaseControl
 
 		if ($this->order && in_array($this->order, $this->allowed_orders)) {		
 			$this->selection->order($this->order.' '.($this->desc ? 'DESC' : 'ASC'));
+		} 
+		// Second/default order field is first field in allowed orders
+		if ($secondOrder = reset($this->allowed_orders)) {
+			$this->selection->order($secondOrder.' DESC');
 		}
 		
 		return $this->selection;
