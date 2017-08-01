@@ -15,7 +15,10 @@ $configurator->createRobotLoader()
 	->register();
 
 $configurator->addConfig(__DIR__ . '/config/config.neon');
-$configurator->addConfig(__DIR__ . '/config/config.local.neon');
+// config.local.neon should exists only in development enviroment
+if (file_exists(__DIR__ . '/config/config.local.neon')) {
+	$configurator->addConfig(__DIR__ . '/config/config.local.neon');
+}
 
 $container = $configurator->createContainer();
 
