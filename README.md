@@ -10,7 +10,7 @@ Global search field is in page header. You can search customers and invoices too
 
 **Try demo here:**
 ```
-http://bpavol.eu/code-sample
+http://bpavol.sk/code-sample
 ```
 
 Login crendetials:
